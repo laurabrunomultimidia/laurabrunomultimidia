@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contato – Laura Bruno</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        
+        :root {
+            --purple: #c664e8;
+            --black: #000000;
+            --white: #FFFFFF;
+            --neon-green: #1feb94;
+        }
+
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            overflow-x: hidden;
+        }
+
+        .main-container {
+            width: 90%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .form-input {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: white;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #c664e8;
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 0 15px rgba(198, 100, 232, 0.2);
+        }
+
+        select option {
+            background: #1a1a1a;
+            color: #FFFFFF;}
+
+        .btn-submit {
+            background-color: #1feb94;
+            color: #000000;
+            font-weight: 800;
+            transition: all 0.3s ease;
+            cursor: pointer;
+        }
+
+        .btn-submit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(31, 235, 148, 0.3);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
+        #success-modal {
+            display: none;
+            position: fixed;
+            inset: 0;
+            background: rgba(0,0,0,0.8);
+            backdrop-filter: blur(5px);
+            z-index: 100;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body class="min-h-screen flex flex-col">
+
+
+    <div id="success-modal">
+        <div class="glass-card p-10 rounded-3xl text-center max-w-sm mx-4 border-2 border-[--neon-green]">
+            <div class="w-16 h-16 bg-[--neon-green] rounded-full flex items-center justify-center mx-auto mb-6">
+                <i class="fas fa-check text-black text-2xl"></i>
+            </div>
+            <h2 class="text-2xl font-bold mb-2 text-[--neon-green]">Mensagem Enviada!</h2>
+            <p class="text-white/60 mb-6 text-sm">Obrigada pelo contato, Laura Bruno responderá em breve.</p>
+            <button onclick="closeModal()" class="w-full py-3 bg-white/10 hover:bg-white/20 rounded-xl transition font-bold uppercase text-xs tracking-widest">Fechar</button>
+        </div>
+    </div>
+<nav class="w-full border-b border-white/10 py-6 sticky top-0 bg-black/80 backdrop-blur-md z-50">
+        <div class="main-container flex justify-between items-center">
+            <div class="text-2xl font-extrabold tracking-tighter italic">
+                LAURA<span class="text-[--purple]">BRUNO - Multimídia</span>
+            </div>
+            <div class="flex space-x-6 text-sm font-semibold uppercase tracking-widest">
+                <a href="file:///C:/Users/laura.bsilva19/Downloads/projeto%20integrador/indexlbm.html#" class="hover:text-[--neon-green] transition">Voltar</a>
+            </div>
+        </div>
+    </nav>
+
+    <main class="flex-grow flex items-center justify-center py-12 px-4 relative overflow-hidden">
+        
+
+        <div class="absolute top-1/4 -left-20 w-64 h-64 bg-[--purple] opacity-10 blur-[120px] rounded-full"></div>
+        <div class="absolute bottom-1/4 -right-20 w-80 h-80 bg-[--neon-green] opacity-10 blur-[120px] rounded-full"></div>
+
+        <div class="main-container max-w-6xl w-full grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            
+
+            <div class="space-y-8">
+                <div>
+                    <img src="imagensprojeto/lbmfundopreto.png">
+                    <p class="text-white/60 text-lg max-w-md">
+                        Tem uma ideia mas não sabe por onde começar? Preencha o formulário e vamos transformar seu projeto em realidade digital.
+                    </p>
+                </div>
+
+                <div class="space-y-6">
+                    <div class="flex items-center space-x-4 group">
+                        <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-[--purple] transition-colors">
+                            <i class="fas fa-envelope text-[--purple] group-hover:text-black"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-white/40">E-mail direto</p>
+                            <p class="font-bold">lauramultimidiadigital@gmail.com</p>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4 group">
+                        <div class="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center group-hover:bg-[--neon-green] transition-colors">
+                            <i class="fab fa-whatsapp text-[--neon-green] group-hover:text-black"></i>
+                        </div>
+                        <div>
+                            <p class="text-xs uppercase tracking-widest text-white/40">WhatsApp</p>
+                            <p class="font-bold">+55 (11) 952464647</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+     
+            <div class="glass-card p-8 md:p-12 rounded-[2rem] shadow-2xl relative">
+                <form id="contact-form" class="space-y-5">
+                    <div class="grid md:grid-cols-2 gap-5">
+                        <div class="space-y-2">
+                            <label class="text-xs uppercase tracking-widest font-bold text-white/50 ml-1">Seu Nome</label>
+                            <input type="text" id="name" name="name" placeholder="Ex: Maria Da Silva" class="form-input w-full p-4 rounded-xl text-sm" required>
+                        </div>
+                        <div class="space-y-2">
+                            <label class="text-xs uppercase tracking-widest font-bold text-white/50 ml-1">Seu E-mail</label>
+                            <input type="email" id="email" name="email" placeholder="email@exemplo.com" class="form-input w-full p-4 rounded-xl text-sm" required>
+                        </div>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs uppercase tracking-widest font-bold text-white/50 ml-1">Tipo de Projeto</label>
+                        <select id="project-type" name="project-type" class="form-input w-full p-4 rounded-xl text-sm appearance-none cursor-pointer">
+                            <option value="video">Edição de Vídeo</option>
+                            <option value="social">Gestão de Redes Sociais</option>
+                            <option value="design">Design Gráfico / Ilustração</option>
+                            <option value="design">personalizados</option>
+                            <option value="full">Outros</option>
+                        </select>
+                    </div>
+
+                    <div class="space-y-2">
+                        <label class="text-xs uppercase tracking-widest font-bold text-white/50 ml-1">Sua Mensagem</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Conte um pouco sobre sua ideia..." class="form-input w-full p-4 rounded-xl text-sm resize-none" required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit w-full py-5 rounded-xl uppercase tracking-tighter text-lg mt-4">
+                     Enviar Proposta
+</button>
+                </form>
+                
+                <div class="absolute -top-4 -right-4 bg-[--purple] text-black text-[10px] font-black px-4 py-1 rounded-full rotate-12 uppercase tracking-tighter">
+                    Obrigada desde ja!
+                </div>
+            </div>
+
+        </div>
+    </main>
+
+    <footer class="py-8 border-t border-white/5 text-center text-[10px] text-white/20 uppercase tracking-[0.3em]">
+        © 2026 Laura Bruno – Projeto integrador Senac
+    </footer>
+</body>
+</html>

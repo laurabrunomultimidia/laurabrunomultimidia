@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laura Bruno – Multimídia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+         @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap');
+        :root {
+            --purple: #c664e8;
+            --black: #000000;
+            --white: #FFFFFF;
+            --neon-green: #1feb94;
+        }
+
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            scroll-behavior: smooth;
+            overflow-x: hidden;
+        }
+
+        .main-container {
+            width: 90%; 
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .item-23 { width: 23%; }
+        .item-60 { width: 58%; } 
+        .item-40 { width: 38%; } 
+
+        .btn-primary {
+            background-color: #1feb94;
+            color: #000000;
+            font-weight: 800;
+            transition: all 0.3s ease;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 0 20px rgba(31, 235, 148, 0.4);
+        }
+
+        .hero-header {
+            position: relative;
+            background-color: #c664e8;
+            border-radius: 1.5rem;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hero-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('imagensprojeto/lbmfundoroxo.png');
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            opacity: 0.2; 
+            z-index: -1;
+        }
+
+        .carousel-container {
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            border-radius: 1rem;
+            background: #f5f5f4;
+        }
+
+        .carousel-track {
+            display: flex;
+            transition: transform 0.5s ease-in-out;
+            will-change: transform;
+        }
+
+        .carousel-item {
+            min-width: 100%;
+            aspect-ratio: 16 / 9;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: #fff;
+        }
+
+        .carousel-item img {
+            max-width: 100%;
+            max-height: 80%;
+            object-fit: contain;
+        }
+
+        .carousel-nav {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(0,0,0,0.6);
+            color: white;
+            border: none;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            cursor: pointer;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s;
+        }
+        .carousel-nav:hover { background: #c664e8; }
+        .prev-btn { left: 15px; }
+        .next-btn { right: 15px; }
+
+        .desc-carousel {
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            color: #333;
+            font-weight: 600;
+        }
+
+        .profile-image-container {
+            position: relative;
+            width: 100%;
+            max-width: 300px;
+            margin: 0 auto 2rem auto;
+        }
+
+        .profile-image-container::after {
+            content: '';
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            right: -15px;
+            bottom: -15px;
+            border: 2px solid #c664e8;
+            border-radius: 1.5rem;
+            z-index: 0;
+        }
+
+        .profile-image {
+            position: relative;
+            z-index: 1;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 1.5rem;
+            filter: grayscale(20%);
+        }
+
+
+        @media (max-width: 1024px) {
+            .item-23, .item-60, .item-40 {
+                width: 100%;
+                margin-bottom: 1.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            nav .main-container {
+                flex-direction: column;
+                gap: 15px;
+            }
+            .nav-links {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+                gap: 10px;
+            }
+            .nav-links a {
+                font-size: 10px;
+                padding: 5px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- NAVEGAÇÃO -->
+    <nav class="w-full border-b border-white/10 py-6 sticky top-0 bg-black/80 backdrop-blur-md z-50">
+        <div class="main-container flex justify-between items-center">
+            <div class="text-xl md:text-2xl font-extrabold tracking-tighter italic shrink-0">
+                LAURA<span class="text-[--purple]">BRUNO - MULTIMÍDIA</span>
+            </div>
+            <div class="nav-links flex space-x-4 md:space-x-8 text-[10px] md:text-sm font-semibold uppercase tracking-widest items-center">
+                <a href="#projetos" class="hover:text-[--neon-green] transition whitespace-nowrap">Projetos</a>
+                <a href="https://drive.google.com/drive/u/1/folders/1GiiK6LyLhG-WxZyFANWLjRxYKmf079O2" target="_blank" class="hover:text-[--neon-green] transition whitespace-nowrap">Portfólio completo</a>
+                <a href="file:///C:/Users/laura.bsilva19/Downloads/projeto%20integrador/contatolbm.html" class="text-[--neon-green] border border-[--neon-green] px-3 md:px-4 py-1 rounded hover:bg-[--neon-green] hover:text-black transition whitespace-nowrap">Contato</a>
+            </div>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        
+        <!-- SEÇÃO 1: HERO -->
+        <header class="hero-header w-full p-10 md:p-20 text-center my-8 text-black shadow-[0_0_50px_rgba(198,100,232,0.2)]">
+            <h1 class="text-2xl md:text-6xl font-extrabold mb-6 leading-tight relative z-10">
+                Oi, tudo bem? Antes de conhecer e fechar um projeto entenda o que faz um profissional em Multimídia</h1>
+            <p class="text-base md:text-xl font-medium max-w-2xl mx-auto mb-10 opacity-90 relative z-10">
+                O técnico em multimídia cria, edita e produz conteúdos digitais que integram texto, áudio, vídeo, imagem e animação. Eles atuam desenvolvendo materiais para redes sociais, vídeos, animações 2D, sites e games.
+            </p>
+        </header>
+
+        <!-- SEÇÃO 2: SERVIÇOS -->
+        <div class="w-full py-6 px-6 bg-white/5 rounded-xl flex items-center justify-center border border-white/10 mb-12 italic text-[--neon-green] text-center">
+           Na LBM: Design Gráfico - Ilustração - Edição de Videos - Personalizados Digitais - Gestão de redes sociais
+        </div>
+
+        <!-- SEÇÃO 3: TRAJETÓRIA -->
+        <section class="mb-20">
+            <h2 class="text-3xl font-bold mb-12 text-center text-[--white]">Trajetória</h2>
+            <div class="flex flex-wrap justify-between gap-4">
+                <div class="item-23 flex-1 min-w-[200px] bg-white/5 border-l-2 border-[--purple] p-8 rounded-r-2xl hover:bg-white/10 transition group">
+                    <p class="text-[10px] uppercase tracking-[0.3em] text-[--purple] font-black mb-2 opacity-70">Freelancer internacional</p>
+                    <p class="font-bold text-xl leading-tight group-hover:text-[--purple] transition-colors">Agência em <br>Portugal</p>
+                </div>
+                
+                <div class="item-23 flex-1 min-w-[200px] bg-white/5 border-l-2 border-[--neon-green] p-8 rounded-r-2xl hover:bg-white/10 transition group">
+                    <p class="text-[10px] uppercase tracking-[0.3em] text-[--neon-green] font-black mb-2 opacity-70">Parceria em Posts</p>
+                    <p class="font-bold text-xl leading-tight group-hover:text-[--neon-green] transition-colors">Atriz <br>Bianca Rinaldi</p>
+                </div>
+                
+                <div class="item-23 flex-1 min-w-[200px] bg-white/5 border-l-2 border-[--purple] p-8 rounded-r-2xl hover:bg-white/10 transition group">
+                    <p class="text-[10px] uppercase tracking-[0.3em] text-[--purple] font-black mb-2 opacity-70">Edição de vídeo</p>
+                    <p class="font-bold text-xl leading-tight group-hover:text-[--purple] transition-colors">Turismo na <br>Itália</p>
+                </div>
+                
+                <div class="item-23 flex-1 min-w-[200px] bg-white/5 border-l-2 border-[--neon-green] p-8 rounded-r-2xl hover:bg-white/10 transition group">
+                    <p class="text-[10px] uppercase tracking-[0.3em] text-[--neon-green] font-black mb-2 opacity-70">Infoprodutos</p>
+                    <p class="font-bold text-xl leading-tight group-hover:text-[--neon-green] transition-colors">Projetos para <br>Educadores</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO 4: Portfólio e Sobre -->
+        <section class="flex flex-wrap justify-between items-stretch gap-6 mb-20">
+           
+            <div id="projetos" class="item-60 bg-white text-black p-10 rounded-3xl flex flex-col justify-between shadow-2xl">
+                <div>
+                    <h3 class="text-3xl font-extrabold mb-4">Veja o que já entreguei</h3>
+                    <p class="text-black/70 mb-8">Isso aqui é só um breve resumo de muitos trabalhos</p>
+                    
+                    <div class="carousel-container">
+                        <button class="carousel-nav prev-btn" onclick="moveSlide(-1)"><i class="fas fa-chevron-left"></i></button>
+                        <button class="carousel-nav next-btn" onclick="moveSlide(1)"><i class="fas fa-chevron-right"></i></button>
+                        
+                        <div class="carousel-track" id="track">
+                            <div class="carousel-item">
+                                <img src="imagensprojeto/novelaapocalipserecordtv.jpg" alt="Televisão novela Apocalipse">
+                                <div class="desc-carousel">Televisão novela Apocalipse</div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="imagensprojeto/Thaysesantospos.jpg" alt="Post instagram">
+                                <div class="desc-carousel">Post instagram</div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="imagensprojeto/beatrizpsicologa.jpg" alt="Post instagram">
+                                <div class="desc-carousel">Carrossel para Instagram</div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="imagensprojeto/biancasbt.jpg" alt="Post instagram">
+                                <div class="desc-carousel">Televisão Bianca Rinaldi no SBT</div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="imagensprojeto/rosepelocanva.jpg" alt="Post instagram">
+                                <div class="desc-carousel">Um Carrossel editado no Canva</div>
+                            </div>
+                            <div class="carousel-item">
+                                <img src="imagensprojeto/marcalb.jpg" alt="Post">
+                                <div class="desc-carousel">Marca desenhada no Illustrator</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <a href="file:///C:/Users/laura.bsilva19/Downloads/projeto%20integrador/contatolbm.html" class="btn-primary mt-8 py-4 px-8 rounded-xl w-full md:w-fit uppercase tracking-tighter text-center">
+                    Quero algo assim para mim
+                </a>
+            </div>
+
+            <!-- Laura (SOBRE) -->
+            <div id="sobre" class="item-40 bg-zinc-900 border border-white/10 p-10 rounded-3xl flex flex-col">
+                <h3 class="text-2xl font-bold mb-8 text-[--neon-green]">Quem é Laura?...</h3>
+                <div class="profile-image-container">
+                    <img src="imagensprojeto/perfillaura.jpg" alt="Laura Bruno" class="profile-image shadow-2xl">
+                </div>
+
+                <ul class="space-y-6 flex-grow text-white/70 text-sm">
+                    <li><i class="fas fa-check text-[--purple] mr-2"></i> Estudante do curso Técnico em Multimídia Senac Largo Treze</li>
+                    <li><i class="fas fa-check text-[--purple] mr-2"></i> Focada em trabalhar com gerenciamento de redes</li>
+                    <li><i class="fas fa-check text-[--purple] mr-2"></i> Quer transformar ideias em estruturas digitais.</li>
+                </ul>
+                <div class="mt-8 pt-6 border-t border-white/5 text-[--purple] font-bold italic text-sm text-center">
+                    Não entregue apenas conteúdo, entregue uma experiêncial visual inesquecível.
+                </div>
+            </div>
+        </section>
+
+        <!-- SEÇÃO CTA -->
+        <section id="contato" class="w-full bg-[--neon-green] text-black p-12 rounded-3xl text-center mb-20 shadow-xl">
+            <h3 class="text-3xl font-extrabold mb-4">Transforme ideias soltas em impacto visual.</h3>
+            <p class="text-lg font-medium mb-8 opacity-80">Do primeiro traço no Illustrator à edição final do vídeo. Eu cuido da técnica para você brilhar no digital </p>
+            <a href="file:///C:/Users/laura.bsilva19/Downloads/projeto%20integrador/contatolbm.html" target="_blank" class="bg-black text-white py-5 px-12 rounded-full text-xl font-bold hover:scale-105 transition-all shadow-2xl inline-block">
+                Preciso criar algo!
+            </a>
+        </section>
+
+        <!-- FAQ -->
+        <section class="mb-20">
+            <h4 class="text-center font-bold text-2xl mb-10 text-[--purple]">Dúvidas frequentes</h4>
+            <div class="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto text-sm">
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/5">
+                    <p class="font-bold text-[--neon-green] mb-2">Quanto tempo demora?</p>
+                    <p class="text-white/60">A ansiedade pelo resultado rápido é comum, mas o design exige etapas de briefing e validação.</p>
+                </div>
+                <div class="p-6 bg-white/5 rounded-2xl border border-white/5">
+                    <p class="font-bold text-[--neon-green] mb-2">É personalizado?</p>
+                    <p class="text-white/60">Sim. Cada projeto é adaptado exclusivamente para o seu serviço.</p>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+    <!-- RODAPÉ -->
+    <footer class="w-full border-t border-white/10 py-16 mt-20 bg-stone-950">
+        <div class="main-container grid grid-cols-1 md:grid-cols-3 gap-12">
+            <div>
+                <div class="text-2xl font-extrabold tracking-tighter italic mb-6">
+                    LB<span class="text-[--purple]">MULTIMÍDIA</span>
+                </div>
+                <p class="text-sm text-white/50 leading-relaxed">
+                    Experiências digitais organizadas para profissionais que não querem perder tempo.
+                </p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 text-[--neon-green] uppercase text-xs tracking-widest">Você encontra aqui</h4>
+                <ul class="text-sm space-y-3 text-white/70">
+                    <li><i class="fas fa-arrow-right text-[10px] mr-2 text-[--purple]"></i> Adobe, Canva, Capcut e Figma.</li>
+                    <li><i class="fas fa-arrow-right text-[10px] mr-2 text-[--purple]"></i> Originalidade</li>
+                    <li><i class="fas fa-arrow-right text-[10px] mr-2 text-[--purple]"></i> Comunicação clara</li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-6 text-[--neon-green] uppercase text-xs tracking-widest">Redes Sociais</h4>
+                <div class="flex space-x-4">
+                    <a href="https://www.instagram.com/lbmultimidiadigital/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[--purple] hover:text-black transition"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/laura-t%C3%A9cnica-em-multim%C3%ADdia-5016853b2/" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[--purple] hover:text-black transition"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://www.behance.net/laurabsilva3" target="_blank" class="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center hover:bg-[--purple] hover:text-black transition"><i class="fab fa-behance"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="main-container mt-12 pt-8 border-t border-white/5 text-center text-[10px] text-white/30 uppercase tracking-[0.2em]">
+            © 2026 Laura Bruno – Projeto Integrador Senac
+        </div>
+    </footer>
+
+    <script>
+        let currentSlide = 0;
+        const track = document.getElementById('track');
+        const items = document.querySelectorAll('.carousel-item');
+        const totalSlides = items.length;
+
+        function moveSlide(direction) {
+            currentSlide = (currentSlide + direction + totalSlides) % totalSlides;
+            const offset = currentSlide * -100;
+            track.style.transform = `translateX(${offset}%)`;
+        }
+    </script>
+</body>
+</html>
